@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <base href="./">
+    <title>Getting Started - B@C</title>
+    <meta property="og:title" content="Getting Started - B@C" />
+    <meta name="twitter:title" content="Getting Started - B@C" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="css/slides-customized.min.css?p=k5r3yjes&rnd=802231" rel="stylesheet" type="text/css" id="js-slides-css">
+
+    
+    <!-- Fonts and Material Icons -->
+    <link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css2?family=Material+Icons&display=swap" id="js-google-fonts" />
+    <style id="js-slides-fonts">
+        .slides { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; }
+    </style>
+<link href="css/custom_U3naHdts.css?p=k5r3yjes&rnd=706235" rel="stylesheet" type="text/css">    
+    <link rel="preload" href="assets/svg/icon-set.svg?p=k5r3yjes" as="image" type="image/svg+xml" crossorigin>
+
+</head>
+<body class="slides animated noPreload">
+<!-- Slide 58 (#1) -->
+<section data-cid="slide-58-695fcf29" class="slide flexShowcase webgl">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="fix-12-12 left">
+          <h1 class="margin-bottom-2 ae-1">Getting Started</h1>
+          <ul class="flex ae-3">
+            <li class="col-12-14"><p class="large"><big>
+              &#128161; <big><b>**TL;DR**:</b></big><br>
+* No previous experience is required. Open to all majors and backgrounds.<br>
+* In order to join you should:<br>
+  - Join <a href="https://discord.gg/CmxVPuKeuB"><u><b>Discord</b></u></a> (primary platform), <a href="https://t.me/joinchat/cjeaV8-GR2AxZjYx"><u><b>Telegram</b></u></a> (optional, but active) and the <a href="https://calendar.google.com/calendar/u/2?cid=Y19ia2hhM24yOGM3b2U2dGsyc3ExZmcwamNza0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"><u><b>Google Calendar</b></u></a>!<br>
+- You can also join the <a href="https://docs.google.com/forms/d/e/1FAIpQLScukLNP4Vna-edVsPtQ0XDyadBSBp7aztx0aX-Yx_FbvrZRGg/viewform?usp=sf_link"><u><b>Mailing List</b></u></a>, for minimal communication.<br>
+  - Attend a Blockchain Intro Session, if you are new to blockchain (no background required)<br>
+  - Follow the instructions to <a href="#applications"><u><b>join Lion Dao</b></u></a></big>
+</p></li></ul>
+
+          <p class="ae-3 margin-bottom-2">          
+          Blockchain@Columbia (B@C) is open to complete novices and decentralised geniuses alike. At B@C, you can meet others interested in blockchain, learn about the basics, take a deep dive into complex topics, listen to speakers and launch your own projects. Here is a list of some of the things we do:</p>
+          <ul class="list disc light ae-3 margin-bottom-2">
+            <li><b>Social events:</b> for meeting people with similar interests, preferably with some Columbia-sponsored pizza in hand.</li>
+  <li>Host weekly speakers</li>
+  <li>Participate in governance of protocols like Uniswap, dYdX and Compound</li>
+  <li>Host large events like Ledgerfest (conference) and LionHack (hackathon)</li>
+</ul>
+          <p class="ae-4"><span class="opacity-8">Feel free to explore the links below, get involved, and start contributing! We are open to technical, non-technical, beginner, and expert alike. If you’re new you probably want to have a look at the <a href="about.html"><u><b>About Us</b></u></a> page to learn more about B@C!</span></p>
+
+<p class="bold ae-4"><span class="opacity-8">The best way to stay in touch with the club and events is the <a href="https://blockchainatcolumbia.org/7f6609ea866c42e0994ac7978df423bf"><u>Discord</u></a> channel.</span></p>
+
+          
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="background"></div>
+</section>
+
+<script type="text/javascript" src="https://rawcdn.githack.com/mrdoob/three.js/41284c6812176d16a6e426f1962ee1738885fa58/build/three.min.js"></script>
+<script type="text/javascript" src="https://rawcdn.githack.com/mrdoob/three.js/41284c6812176d16a6e426f1962ee1738885fa58/examples/js/WebGL.js"></script>
+
+<script type="x-shader/x-vertex" id="vertexshader">
+  attribute float scale;
+  void main() {
+  vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+  gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+  gl_Position = projectionMatrix * mvPosition;
+}
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+  uniform vec3 color;
+  void main() {
+  if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+  gl_FragColor = vec4( color, 1.0 );
+}
+</script>
+
+<script>
+  if ( WEBGL.isWebGLAvailable() === false ) {
+    document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+  }
+  var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+  var container;
+  var camera, scene, renderer;
+  var particles, count = 0;
+  var mouseX = 0, mouseY = 0;
+  var windowHalfX = window.innerWidth / 2;
+  var windowHalfY = window.innerHeight / 2;
+
+  init();
+  animate();
+
+  function init() {
+
+    container = $('.webgl .background');
+
+    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera.position.z = 1000;
+
+    scene = new THREE.Scene();
+
+    //
+
+    var numParticles = AMOUNTX * AMOUNTY;
+
+    var positions = new Float32Array( numParticles * 3 );
+    var scales = new Float32Array( numParticles );
+
+    var i = 0, j = 0;
+
+    for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+      for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+        positions[ i ] = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 ); // x
+        positions[ i + 1 ] = 0; // y
+        positions[ i + 2 ] = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 ); // z
+
+        scales[ j ] = 1;
+
+        i += 3;
+        j ++;
+
+      }
+
+    }
+
+    var geometry = new THREE.BufferGeometry();
+    geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+    geometry.addAttribute( 'scale', new THREE.BufferAttribute( scales, 1 ) );
+
+    var material = new THREE.ShaderMaterial( {
+
+      uniforms: {
+        color: { value: new THREE.Color( 0x3E4FB2 ) },
+      },
+      vertexShader: document.getElementById( 'vertexshader' ).textContent,
+      fragmentShader: document.getElementById( 'fragmentshader' ).textContent
+
+    } );
+
+    //
+
+    particles = new THREE.Points( geometry, material );
+    scene.add( particles );
+
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    $(container).append( renderer.domElement );
+
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+    document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+    document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+    //
+
+    window.addEventListener( 'resize', onWindowResize, false );
+
+  }
+
+  function onWindowResize() {
+
+    windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+  }
+
+  //
+
+  function onDocumentMouseMove( event ) {
+
+    mouseX = event.clientX - windowHalfX;
+    mouseY = event.clientY - windowHalfY;
+
+  }
+
+  function onDocumentTouchStart( event ) {
+
+    if ( event.touches.length === 1 ) {
+
+      event.preventDefault();
+
+      mouseX = event.touches[ 0 ].pageX - windowHalfX;
+      mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+    }
+
+  }
+
+  function onDocumentTouchMove( event ) {
+
+    if ( event.touches.length === 1 ) {
+
+      event.preventDefault();
+
+      mouseX = event.touches[ 0 ].pageX - windowHalfX;
+      mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+    }
+
+  }
+
+  //
+
+  function animate() {
+
+    requestAnimationFrame( animate );
+
+    render();
+
+  }
+
+  function render() {
+
+    camera.position.x += ( mouseX - camera.position.x ) * .05;
+    camera.position.y += ( mouseY - camera.position.y ) * .05;
+    camera.lookAt( scene.position );
+
+    var positions = particles.geometry.attributes.position.array;
+    var scales = particles.geometry.attributes.scale.array;
+
+    var i = 0, j = 0;
+
+    for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+      for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+        positions[ i + 1 ] = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
+        ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+
+        scales[ j ] = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 8 +
+        ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 8;
+
+        i += 3;
+        j ++;
+
+      }
+
+    }
+
+    particles.geometry.attributes.position.needsUpdate = true;
+    particles.geometry.attributes.scale.needsUpdate = true;
+
+    renderer.render( scene, camera );
+
+    count += 0.1;
+
+  }
+
+</script>
+<!-- jQuery 3.6.0 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Compressed Scripts -->
+    <script src="js/slides.min.js?611360" type="text/javascript"></script>
+        
+ 
+    
+</body>
+</html>

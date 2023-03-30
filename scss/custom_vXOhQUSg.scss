@@ -1,0 +1,174 @@
+/* 
+Compile this file to css/custom_vXOhQUSg.css using any SCSS preprocessor. 
+More information here: https://slides.gitbook.io/manual/scss
+*/
+
+@import "mixins.scss"; 
+@import "variables.scss";
+@import "variables-custom.scss";
+
+/* First Page (#1) */
+/* smooth gradient fade to the next slide */
+  .smoothTint {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, rgba(0,0,0,.6)), to(#030609));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,.6) 80%, #030609);
+    background: -o-linear-gradient(top, rgba(0,0,0,.6) 80%, #030609);
+    background: linear-gradient(to bottom, rgba(0,0,0,.6) 80%, #030609);
+  }
+.parallax .background.parallax-element {
+    -webkit-transition: 0s !important;
+    -o-transition: 0s !important;
+    -moz-transition: 0s !important;
+    transition: 0s !important;
+}
+.preloader {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  	background-color: #fff;
+}
+
+/* Getting Started  (#2) */
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-65-6c3ed531"] */
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@-webkit-keyframes blink {50%{opacity:0;}}
+@keyframes blink {50%{opacity:0;}}
+.slide[data-cid="slide-65-6c3ed531"]{
+  .flex.flex-65 > li {
+    position: relative;
+    padding-left: 60px;
+    padding-bottom: 30px;
+  }
+  .flex-65 .material-icons {
+    position:absolute;
+    left: 0;
+    top: -5px;
+    font-size: 36px;
+  }
+  @include media($phablet, max) {
+    .flex.flex-65 > li {
+      padding-left: 65px;
+    }
+    .flex-65 .material-icons {
+      left: 0px;
+    }
+  }
+}
+.textLedger { color:rgb(122,166,222);}
+.textDiscord { color:rgb(122,166,222);}
+.textTelegram { color:rgb(122,166,222);}
+.textGcal { color:rgb(122,166,222);}
+
+/* What We Do (#3) */
+
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-105-ad5643ef"] */
+.slide[data-cid="slide-105-ad5643ef"]{
+  .box-105{
+    max-width: 480px;
+    min-height:580px;
+    @include media(570px, max) {
+      max-width: 320px;
+      min-height: 440px;
+    }
+  }
+  .thumbnail-105 {
+    &:hover{
+      .poster-105{
+        opacity: 1 !important;
+      }
+    }
+    a:hover{
+      opacity: 1 !important;
+    }
+  }
+  .poster-105{
+    transition:.15s;
+  }
+  .number-105{
+    top: 40px;
+    left:40px;
+    color: #405062;
+  }
+  .inner-105 {
+    right: 40px;
+    bottom: 60px;
+    left: 40px;
+    color: #405062;
+  }
+}
+
+/* Board Info (#4) */
+
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-104-87c73be5"] */
+.slide[data-cid="slide-104-87c73be5"]{
+  .slider-104{
+    img{
+      width:300px;
+      border:0px solid transparent;
+      transition: .5s;
+    }
+    .slick-slide{
+      &.slick-current{
+        img{
+          border: 7px solid #405062;
+          opacity:10 !important;
+        }
+      }
+    }
+  }
+  .slider-104-arrow{
+    @include media($phablet, max) {
+      .slick-prev{
+        margin-right: 0!important;
+        float: right;
+      }
+      .slick-next{
+        float: none;
+      }
+    }
+    &:hover{
+      svg{
+        opacity:0.6;
+      }
+    }
+    svg{
+      transition: .15s;
+    }
+  }
+  .slider-104-controller{
+    @include media($phablet, max) {
+      order:1;
+    }
+  }
+  .social-104:hover{
+    opacity: 1 !important;
+  }
+}
+
+/* Last Slide (#5) */
+.slide[data-cid="example-ilRMwaAD-f3e7521e"]{
+  .flex-68 a {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    transition: opacity 0.1s ease-in, transform 0.15s cubic-bezier(0.5, 0, 0.25, 2.5);
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+  &.whiteSlide .tintLogos {
+    filter: brightness(0.2);
+  }
+  &:not(.whiteSlide) .tintLogos {
+    filter: brightness(1.3);
+  }
+}

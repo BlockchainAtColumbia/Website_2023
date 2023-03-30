@@ -1,0 +1,26 @@
+/* Slide 58 (#1) */
+li {
+  margin-top: 2%;
+}
+
+ul {
+  padding-left: 1em !important;
+  margin-left: 1em;
+}
+
+ol {
+  padding-left: 1em !important;
+  margin-left: 1em;
+}
+
+.list.decimal li {
+  list-style-type: decimal;
+}
+
+.list.disc li {
+  list-style-type: disc;
+}
+
+.list.alph li {
+  list-style-type: lower-latin;
+}

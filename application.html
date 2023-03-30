@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <base href="./">
+    <title>Application - B@C</title>
+    <meta property="og:title" content="Application - B@C" />
+    <meta name="twitter:title" content="Application - B@C" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="css/slides-customized.min.css?p=k5r3yjes&rnd=303425" rel="stylesheet" type="text/css" id="js-slides-css">
+
+    
+    <!-- Fonts and Material Icons -->
+    <link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css2?family=Material+Icons&display=swap" id="js-google-fonts" />
+    <style id="js-slides-fonts">
+        .slides { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; }
+    </style>
+<link href="css/custom_03Szf46j.css?p=k5r3yjes&rnd=104256" rel="stylesheet" type="text/css">    
+    <link rel="preload" href="assets/svg/icon-set.svg?p=k5r3yjes" as="image" type="image/svg+xml" crossorigin>
+
+</head>
+<body class="slides animated noPreload">
+<!-- Navigation -->
+<nav class="side ">
+  <div class="navigation default">
+    <ul></ul>
+  </div>
+</nav><!-- Slide 173 (#1) -->
+<section data-cid="slide-173-e14e100b" class="slide webgl" id="applications">
+  <div class="content">
+    <div class="container">
+      <div class="wrap align-left">
+        <div class="fix-10-12">
+          <h1 class="margin-bottom-4 small tablet-align-center ae-1">Applications</h1>
+          <ul class="flex fixedSpaces equal text-black">
+            <li class="margin-auto margin-bottom-tablet-3 col-4-12 col-tablet-2-3 col-phablet-3-4 col-phone-1-1 ae-2">
+              <div class="white rounded overflow-hidden relative box-173">
+                <img src="" class="block wide"/> 
+                <div class="padding-3">
+                  <div class="equalElement">
+                    <h4 class="margin-bottom-1 small">Officer Application</h4>
+                    <p class="crop opacity-5">
+                      For those interested in taking on more responsibility in Blockchain@Columbia and are interested in eventually joining the board.
+                  </p>
+                  </div>
+                  <a href="" class="crop margin-top-3 button gray wide">Apply</a>
+                </div>
+              </div>
+            </li>
+            <li class="margin-auto margin-bottom-tablet-3 col-4-12 col-tablet-2-3 col-phablet-3-4 col-phone-1-1 ae-3">
+              <div class="white rounded overflow-hidden relative box-173">
+                <img src="" class="block wide"/>
+                <div class="padding-3">
+                  <div class="equalElement">
+                    <h4 class="margin-bottom-1 small">Lion Dao</h4>
+                    <p class="crop opacity-5">Any member of B@C is a member of Lion DAO, but to become a voting member of the DAO and participate in DAO governance, you must get a non-custodial wallet like Metamask and add your Ethereum wallet address to this form below.
+                  </p>
+                  </div>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeejqlOqyzQmOoWxUzpkoIP_9q2HMOlgY0Eh4mo8RQLaQdCLA/viewform" class="crop margin-top-3 button gray wide">Form</a>
+                </div>
+              </div>
+            </li>
+            <li class="margin-auto col-4-12 col-tablet-2-3 col-phablet-3-4 col-phone-1-1 ae-4">
+              <div class="white rounded overflow-hidden relative box-173">
+                <img src="" class="block wide"/>
+                <div class="padding-3">
+                  <div class="equalElement">
+                    <h4 class="margin-bottom-1 small">Grant Application</h4>
+                    <p class="crop opacity-5">Lion DAO gives up to $1.5K micro-grants to students working on blockchain-related projects from DeFi protocols to research to NFT art and more! Check out previous grant winners’ work on our <a href="https://blockchain.mirror.xyz"><u>mirror</u></a>.</p>
+                  </div>
+                  <a href="https://forms.gle/fQZtscPdrtir1TFE6" class="crop margin-top-3 button gray wide">Apply</a>
+                </div> 
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="background"></div>
+</section>
+
+<script type="text/javascript" src="https://rawcdn.githack.com/mrdoob/three.js/41284c6812176d16a6e426f1962ee1738885fa58/build/three.min.js"></script>
+<script type="text/javascript" src="https://rawcdn.githack.com/mrdoob/three.js/41284c6812176d16a6e426f1962ee1738885fa58/examples/js/WebGL.js"></script>
+
+<script type="x-shader/x-vertex" id="vertexshader">
+  attribute float scale;
+  void main() {
+  vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+  gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+  gl_Position = projectionMatrix * mvPosition;
+}
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+  uniform vec3 color;
+  void main() {
+  if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+  gl_FragColor = vec4( color, 1.0 );
+}
+</script>
+
+<script>
+  if ( WEBGL.isWebGLAvailable() === false ) {
+    document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+  }
+  var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+  var container;
+  var camera, scene, renderer;
+  var particles, count = 0;
+  var mouseX = 0, mouseY = 0;
+  var windowHalfX = window.innerWidth / 2;
+  var windowHalfY = window.innerHeight / 2;
+
+  init();
+  animate();
+
+  function init() {
+
+    container = $('.webgl .background');
+
+    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera.position.z = 1000;
+
+    scene = new THREE.Scene();
+
+    //
+
+    var numParticles = AMOUNTX * AMOUNTY;
+
+    var positions = new Float32Array( numParticles * 3 );
+    var scales = new Float32Array( numParticles );
+
+    var i = 0, j = 0;
+
+    for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+      for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+        positions[ i ] = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 ); // x
+        positions[ i + 1 ] = 0; // y
+        positions[ i + 2 ] = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 ); // z
+
+        scales[ j ] = 1;
+
+        i += 3;
+        j ++;
+
+      }
+
+    }
+
+    var geometry = new THREE.BufferGeometry();
+    geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+    geometry.addAttribute( 'scale', new THREE.BufferAttribute( scales, 1 ) );
+
+    var material = new THREE.ShaderMaterial( {
+
+      uniforms: {
+        color: { value: new THREE.Color( 0x3E4FB2 ) },
+      },
+      vertexShader: document.getElementById( 'vertexshader' ).textContent,
+      fragmentShader: document.getElementById( 'fragmentshader' ).textContent
+
+    } );
+
+    //
+
+    particles = new THREE.Points( geometry, material );
+    scene.add( particles );
+
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    $(container).append( renderer.domElement );
+
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+    document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+    document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+    //
+
+    window.addEventListener( 'resize', onWindowResize, false );
+
+  }
+
+  function onWindowResize() {
+
+    windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+  }
+
+  //
+
+  function onDocumentMouseMove( event ) {
+
+    mouseX = event.clientX - windowHalfX;
+    mouseY = event.clientY - windowHalfY;
+
+  }
+
+  function onDocumentTouchStart( event ) {
+
+    if ( event.touches.length === 1 ) {
+
+      event.preventDefault();
+
+      mouseX = event.touches[ 0 ].pageX - windowHalfX;
+      mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+    }
+
+  }
+
+  function onDocumentTouchMove( event ) {
+
+    if ( event.touches.length === 1 ) {
+
+      event.preventDefault();
+
+      mouseX = event.touches[ 0 ].pageX - windowHalfX;
+      mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+    }
+
+  }
+
+  //
+
+  function animate() {
+
+    requestAnimationFrame( animate );
+
+    render();
+
+  }
+
+  function render() {
+
+    camera.position.x += ( mouseX - camera.position.x ) * .05;
+    camera.position.y += ( mouseY - camera.position.y ) * .05;
+    camera.lookAt( scene.position );
+
+    var positions = particles.geometry.attributes.position.array;
+    var scales = particles.geometry.attributes.scale.array;
+
+    var i = 0, j = 0;
+
+    for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+      for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+        positions[ i + 1 ] = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
+        ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+
+        scales[ j ] = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 8 +
+        ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 8;
+
+        i += 3;
+        j ++;
+
+      }
+
+    }
+
+    particles.geometry.attributes.position.needsUpdate = true;
+    particles.geometry.attributes.scale.needsUpdate = true;
+
+    renderer.render( scene, camera );
+
+    count += 0.1;
+
+  }
+
+</script>
+
+<!-- jQuery 3.6.0 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Compressed Scripts -->
+    <script src="js/slides.min.js?611360" type="text/javascript"></script>
+        
+ 
+    
+</body>
+</html>

@@ -1,0 +1,10 @@
+$white: #fbfbfb;
+@include generateColors('white',$white);
+$gray: #bbbbbb;
+$green: #219653;
+$bclightblue: #afdded;
+@include generateColors('bclightblue',$bclightblue);
+$bcdarkblue: #3c5164;
+@include generateColors('bcdarkblue',$bcdarkblue);
+$bcblue: #72a2b7;
+@include generateColors('bcblue',$bcblue);
