@@ -9,7 +9,7 @@
     <meta property="og:title" content="About - B@C" />
     <meta name="twitter:title" content="About - B@C" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="css/slides-customized.min.css?p=k5r3yjes&rnd=803254" rel="stylesheet" type="text/css" id="js-slides-css">
+    <link href="css/slides-customized.min.css?p=k5r3yjes&rnd=637062" rel="stylesheet" type="text/css" id="js-slides-css">
 
     
     <!-- Fonts and Material Icons -->
@@ -36,13 +36,47 @@
             font-weight: 500;
         }
     </style>
-<link href="css/custom_bHwCoEkG.css?p=k5r3yjes&rnd=85362" rel="stylesheet" type="text/css">    
+<link href="css/custom_bHwCoEkG.css?p=k5r3yjes&rnd=884130" rel="stylesheet" type="text/css">    
     <link rel="preload" href="assets/svg/icon-set.svg?p=k5r3yjes" as="image" type="image/svg+xml" crossorigin>
 
 </head>
 <body class="slides animated noPreload">
+<!-- Panel Top 10 -->
+<nav class="panel top">
+  <div class="sections">
+    <div class="left"><a href="index.html" title="Slides Framework"><img src="assets/uploads/1520958704537.png?p=k5r3yjes" width="40%"></a></div>
+    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use href="assets/svg/icons.svg#menu"></use></svg></span></div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<nav class="sidebar" data-sidebar-id="1">
+  <div class="close"><svg><use href="assets/svg/icons.svg#close"></use></svg></div>
+  <div class="content">
+    <a href="index.html" class="logo"><h1 class="bold">B@C</h1></a>
+    <ul class="mainMenu margin-top-3">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="getting-started.html">Getting Started</a></li>
+      <li><a href="application.html">Apply</a></li>
+      <li><a href="material.html">Material</a></li>
+      <li><a href="liondao.html">Lion Dao</a></li>
+    </ul>
+    <ul class="subMenu small opacity-8">
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">License</a></li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <ul class="social opacity-8">
+      <li><a href="https://www.facebook.com/BlockchainatColumbia"><svg><use href="assets/svg/icons.svg#facebook"></use></svg></a></li>
+      <li><a href="https://twitter.com/BlockchainatCU"><svg><use href="assets/svg/icons.svg#twitter"></use></svg></a></li>
+      <li><a href="https://www.instagram.com/blockchaincolumbia/?hl=en"><svg><use href="assets/svg/icons.svg#instagram"></use></svg></a></li>
+    </ul>
+  </div>
+</nav>
 <!-- Slide 58 (#1) -->
-<section data-cid="slide-58-d5fb3c48" class="slide fade-6 kenBurns" id="about">
+<section data-cid="slide-58-d5fb3c48" class="slide flexShowcase webgl">
   <div class="content">
     <div class="container">
       <div class="wrap">
@@ -185,13 +219,34 @@ As the first student blockchain organization DAO, it’s imperative that we set 
     </div>
   </div>
   
-  <div class="background" style="black"></div>
+  <div class="background"></div>
 </section>
+
+<script type="text/javascript" src="https://rawcdn.githack.com/mrdoob/three.js/41284c6812176d16a6e426f1962ee1738885fa58/build/three.min.js"></script>
+<script type="text/javascript" src="https://rawcdn.githack.com/mrdoob/three.js/41284c6812176d16a6e426f1962ee1738885fa58/examples/js/WebGL.js"></script>
+
+<script type="x-shader/x-vertex" id="vertexshader">
+  attribute float scale;
+  void main() {
+  vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+  gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+  gl_Position = projectionMatrix * mvPosition;
+}
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+  uniform vec3 color;
+  void main() {
+  if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+  gl_FragColor = vec4( color, 1.0 );
+}
+</script>
+
 <!-- jQuery 3.6.0 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Compressed Scripts -->
     <script src="js/slides.min.js?611360" type="text/javascript"></script>
-        
+    <script src="js/custom_bHwCoEkG.js?p=k5r3yjes&rnd=947897"></script>    
  
     
 </body>

@@ -1,4 +1,4 @@
-/* FINAL SPONSORS PAGE (#2) */
+/* board info (#2) */
 
 $(function(){
   $(document).ready(function(){

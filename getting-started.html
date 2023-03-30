@@ -9,7 +9,7 @@
     <meta property="og:title" content="Getting Started - B@C" />
     <meta name="twitter:title" content="Getting Started - B@C" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="css/slides-customized.min.css?p=k5r3yjes&rnd=982749" rel="stylesheet" type="text/css" id="js-slides-css">
+    <link href="css/slides-customized.min.css?p=k5r3yjes&rnd=287826" rel="stylesheet" type="text/css" id="js-slides-css">
 
     
     <!-- Fonts and Material Icons -->
@@ -36,11 +36,45 @@
             font-weight: 500;
         }
     </style>
-<link href="css/custom_U3naHdts.css?p=k5r3yjes&rnd=857625" rel="stylesheet" type="text/css">    
+<link href="css/custom_U3naHdts.css?p=k5r3yjes&rnd=852448" rel="stylesheet" type="text/css">    
     <link rel="preload" href="assets/svg/icon-set.svg?p=k5r3yjes" as="image" type="image/svg+xml" crossorigin>
 
 </head>
 <body class="slides animated noPreload">
+<!-- Panel Top 10 -->
+<nav class="panel top">
+  <div class="sections">
+    <div class="left"><a href="index.html" title="Slides Framework"><img src="assets/uploads/1520958704537.png?p=k5r3yjes" width="40%"></a></div>
+    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use href="assets/svg/icons.svg#menu"></use></svg></span></div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<nav class="sidebar" data-sidebar-id="1">
+  <div class="close"><svg><use href="assets/svg/icons.svg#close"></use></svg></div>
+  <div class="content">
+    <a href="index.html" class="logo"><h1 class="bold">B@C</h1></a>
+    <ul class="mainMenu margin-top-3">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="getting-started.html">Getting Started</a></li>
+      <li><a href="application.html">Apply</a></li>
+      <li><a href="material.html">Material</a></li>
+      <li><a href="liondao.html">Lion Dao</a></li>
+    </ul>
+    <ul class="subMenu small opacity-8">
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">License</a></li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <ul class="social opacity-8">
+      <li><a href="https://www.facebook.com/BlockchainatColumbia"><svg><use href="assets/svg/icons.svg#facebook"></use></svg></a></li>
+      <li><a href="https://twitter.com/BlockchainatCU"><svg><use href="assets/svg/icons.svg#twitter"></use></svg></a></li>
+      <li><a href="https://www.instagram.com/blockchaincolumbia/?hl=en"><svg><use href="assets/svg/icons.svg#instagram"></use></svg></a></li>
+    </ul>
+  </div>
+</nav>
 <!-- Slide 58 (#1) -->
 <section data-cid="slide-58-695fcf29" class="slide flexShowcase webgl">
   <div class="content">
@@ -60,9 +94,9 @@
   - Follow the instructions to <a href="#applications"><u><b>join Lion Dao</b></u></a></big>
 </p></li></ul>
 
-          <p class="ae-3 margin-bottom-2">          
+          <p class="ae-3 margin-bottom-3">          
           Blockchain@Columbia (B@C) is open to complete novices and decentralised geniuses alike. At B@C, you can meet others interested in blockchain, learn about the basics, take a deep dive into complex topics, listen to speakers and launch your own projects. Here is a list of some of the things we do:</p>
-          <ul class="list disc light ae-3 margin-bottom-2">
+          <ul class="list disc light ae-3 margin-bottom-3">
             <li><b>Social events:</b> for meeting people with similar interests, preferably with some Columbia-sponsored pizza in hand.</li>
   <li>Host weekly speakers</li>
   <li>Participate in governance of protocols like Uniswap, dYdX and Compound</li>
@@ -103,190 +137,11 @@
 }
 </script>
 
-<script>
-  if ( WEBGL.isWebGLAvailable() === false ) {
-    document.body.appendChild( WEBGL.getWebGLErrorMessage() );
-  }
-  var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
-  var container;
-  var camera, scene, renderer;
-  var particles, count = 0;
-  var mouseX = 0, mouseY = 0;
-  var windowHalfX = window.innerWidth / 2;
-  var windowHalfY = window.innerHeight / 2;
-
-  init();
-  animate();
-
-  function init() {
-
-    container = $('.webgl .background');
-
-    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
-    camera.position.z = 1000;
-
-    scene = new THREE.Scene();
-
-    //
-
-    var numParticles = AMOUNTX * AMOUNTY;
-
-    var positions = new Float32Array( numParticles * 3 );
-    var scales = new Float32Array( numParticles );
-
-    var i = 0, j = 0;
-
-    for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
-
-      for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
-
-        positions[ i ] = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 ); // x
-        positions[ i + 1 ] = 0; // y
-        positions[ i + 2 ] = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 ); // z
-
-        scales[ j ] = 1;
-
-        i += 3;
-        j ++;
-
-      }
-
-    }
-
-    var geometry = new THREE.BufferGeometry();
-    geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
-    geometry.addAttribute( 'scale', new THREE.BufferAttribute( scales, 1 ) );
-
-    var material = new THREE.ShaderMaterial( {
-
-      uniforms: {
-        color: { value: new THREE.Color( 0x3E4FB2 ) },
-      },
-      vertexShader: document.getElementById( 'vertexshader' ).textContent,
-      fragmentShader: document.getElementById( 'fragmentshader' ).textContent
-
-    } );
-
-    //
-
-    particles = new THREE.Points( geometry, material );
-    scene.add( particles );
-
-    renderer = new THREE.WebGLRenderer( { antialias: true } );
-    renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    $(container).append( renderer.domElement );
-
-    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-    document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-    document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-
-    //
-
-    window.addEventListener( 'resize', onWindowResize, false );
-
-  }
-
-  function onWindowResize() {
-
-    windowHalfX = window.innerWidth / 2;
-    windowHalfY = window.innerHeight / 2;
-
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize( window.innerWidth, window.innerHeight );
-
-  }
-
-  //
-
-  function onDocumentMouseMove( event ) {
-
-    mouseX = event.clientX - windowHalfX;
-    mouseY = event.clientY - windowHalfY;
-
-  }
-
-  function onDocumentTouchStart( event ) {
-
-    if ( event.touches.length === 1 ) {
-
-      event.preventDefault();
-
-      mouseX = event.touches[ 0 ].pageX - windowHalfX;
-      mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-    }
-
-  }
-
-  function onDocumentTouchMove( event ) {
-
-    if ( event.touches.length === 1 ) {
-
-      event.preventDefault();
-
-      mouseX = event.touches[ 0 ].pageX - windowHalfX;
-      mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-    }
-
-  }
-
-  //
-
-  function animate() {
-
-    requestAnimationFrame( animate );
-
-    render();
-
-  }
-
-  function render() {
-
-    camera.position.x += ( mouseX - camera.position.x ) * .05;
-    camera.position.y += ( mouseY - camera.position.y ) * .05;
-    camera.lookAt( scene.position );
-
-    var positions = particles.geometry.attributes.position.array;
-    var scales = particles.geometry.attributes.scale.array;
-
-    var i = 0, j = 0;
-
-    for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
-
-      for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
-
-        positions[ i + 1 ] = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
-        ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
-
-        scales[ j ] = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 8 +
-        ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 8;
-
-        i += 3;
-        j ++;
-
-      }
-
-    }
-
-    particles.geometry.attributes.position.needsUpdate = true;
-    particles.geometry.attributes.scale.needsUpdate = true;
-
-    renderer.render( scene, camera );
-
-    count += 0.1;
-
-  }
-
-</script>
 <!-- jQuery 3.6.0 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Compressed Scripts -->
     <script src="js/slides.min.js?611360" type="text/javascript"></script>
-        
+    <script src="js/custom_U3naHdts.js?p=k5r3yjes&rnd=58079"></script>    
  
     
 </body>

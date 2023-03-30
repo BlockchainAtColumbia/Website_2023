@@ -23,19 +23,42 @@ More information here: https://slides.gitbook.io/manual/scss
     transition: 0s !important;
 }
 .bgimg {
-    background-image: url("assets/uploads/low-library-nyc-skyline-night-lights.png?p=k5r3yjes");
+    background-image: url("assets/uploads/untitled-design-1.svg?p=k5r3yjes");
   background-size: cover;
   
 }
-.preloader {
+  .progress-bar-container {
     position: fixed;
-    z-index: 9999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  	background-color: #fff;
-}
+    background: #000;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+  }
+  .progress-bar-container.loaded {
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .progress-bar-wrap {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 3px;
+    width: 200px;
+    background: #222;
+  }
+  .progress-bar-wrap,
+  .progress-bar {
+    position: absolute;
+    height: 3px;
+  }
+  /* ignore below */
+  .progress-bar.blue {
+    display: none !important;
+  }
+  /* ignore above */
 
 /* Getting Started  (#2) */
 /* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-65-6c3ed531"] */
@@ -110,76 +133,7 @@ More information here: https://slides.gitbook.io/manual/scss
   }
 }
 
-/* Board Info (#4) */
-
-/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-104-87c73be5"] */
-.slide[data-cid="slide-104-87c73be5"]{
-  .slider-104{
-    img{
-      width:300px;
-      border:0px solid transparent;
-      transition: .5s;
-    }
-    .slick-slide{
-      &.slick-current{
-        img{
-          border: 7px solid #405062;
-          opacity:10 !important;
-        }
-      }
-    }
-  }
-  .slider-104-arrow{
-    @include media($phablet, max) {
-      .slick-prev{
-        margin-right: 0!important;
-        float: right;
-      }
-      .slick-next{
-        float: none;
-      }
-    }
-    &:hover{
-      svg{
-        opacity:0.6;
-      }
-    }
-    svg{
-      transition: .15s;
-    }
-  }
-  .slider-104-controller{
-    @include media($phablet, max) {
-      order:1;
-    }
-  }
-  .social-104:hover{
-    opacity: 1 !important;
-  }
-}
-
-/* Last Slide (#5) */
-.slide[data-cid="example-ilRMwaAD-f3e7521e"]{
-  .flex-68 a {
-    display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    opacity: 0.9;
-    transition: opacity 0.1s ease-in, transform 0.15s cubic-bezier(0.5, 0, 0.25, 2.5);
-    &:hover {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-  }
-  &.whiteSlide .tintLogos {
-    filter: brightness(0.2);
-  }
-  &:not(.whiteSlide) .tintLogos {
-    filter: brightness(1.3);
-  }
-}
-
-/* last-test (#6) */
+/* Last Slide Final (#4) */
 .slide[data-cid="example-ilRMwaAD-83463bda"]{
   .flex-68 a {
     display: inline-block;

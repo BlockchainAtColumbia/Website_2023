@@ -17,7 +17,7 @@
   filter: brightness(1.3);
 }
 
-/* FINAL SPONSORS PAGE (#2) */
+/* board info (#2) */
 /* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-63-1a5312e8"] */
 .slide[data-cid=slide-63-1a5312e8] .slider-104 img {
   width: 300px;
@@ -50,4 +50,20 @@
 }
 .slide[data-cid=slide-63-1a5312e8] .social-104:hover {
   opacity: 1 !important;
+}
+
+/* Example Parallax (#3) */
+/* smooth gradient fade to the next slide */
+.smoothTint {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, rgba(0, 0, 0, 0.6)), to(#030609));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 80%, #030609);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 80%, #030609);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 80%, #030609);
+}
+
+.parallax .background.parallax-element {
+  -webkit-transition: 0s !important;
+  -o-transition: 0s !important;
+  -moz-transition: 0s !important;
+  transition: 0s !important;
 }
