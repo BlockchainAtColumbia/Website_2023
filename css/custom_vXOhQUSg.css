@@ -15,6 +15,11 @@
   transition: 0s !important;
 }
 
+.bgimg {
+  background-image: url("assets/uploads/low-library-nyc-skyline-night-lights.png?p=k5r3yjes");
+  background-size: cover;
+}
+
 .preloader {
   position: fixed;
   z-index: 9999;
@@ -163,5 +168,24 @@
   filter: brightness(0.2);
 }
 .slide[data-cid=example-ilRMwaAD-f3e7521e]:not(.whiteSlide) .tintLogos {
+  filter: brightness(1.3);
+}
+
+/* last-test (#6) */
+.slide[data-cid=example-ilRMwaAD-83463bda] .flex-68 a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  transition: opacity 0.1s ease-in, transform 0.15s cubic-bezier(0.5, 0, 0.25, 2.5);
+}
+.slide[data-cid=example-ilRMwaAD-83463bda] .flex-68 a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.slide[data-cid=example-ilRMwaAD-83463bda].whiteSlide .tintLogos {
+  filter: brightness(0.2);
+}
+.slide[data-cid=example-ilRMwaAD-83463bda]:not(.whiteSlide) .tintLogos {
   filter: brightness(1.3);
 }
