@@ -170,3 +170,38 @@
 .slide[data-cid=slide-64-24f14d15].whiteSlide .flex-64 .cell-64 {
   color: #202020;
 }
+
+/* Slide 104 (#3) */
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-104-abff5e27"] */
+.slide[data-cid=slide-104-abff5e27] .slider-104 img {
+  width: 300px;
+  border: 0px solid transparent;
+  transition: 0.5s;
+}
+.slide[data-cid=slide-104-abff5e27] .slider-104 .slick-slide.slick-current img {
+  border: 10px solid #2196F3;
+  opacity: 1 !important;
+}
+@media (max-width: 767px) {
+  .slide[data-cid=slide-104-abff5e27] .slider-104-arrow .slick-prev {
+    margin-right: 0 !important;
+    float: right;
+  }
+  .slide[data-cid=slide-104-abff5e27] .slider-104-arrow .slick-next {
+    float: none;
+  }
+}
+.slide[data-cid=slide-104-abff5e27] .slider-104-arrow:hover svg {
+  opacity: 0.6;
+}
+.slide[data-cid=slide-104-abff5e27] .slider-104-arrow svg {
+  transition: 0.15s;
+}
+@media (max-width: 767px) {
+  .slide[data-cid=slide-104-abff5e27] .slider-104-controller {
+    order: 1;
+  }
+}
+.slide[data-cid=slide-104-abff5e27] .social-104:hover {
+  opacity: 1 !important;
+}

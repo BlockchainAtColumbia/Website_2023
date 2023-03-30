@@ -15,11 +15,6 @@
   transition: 0s !important;
 }
 
-.bgimg {
-  background-image: url("assets/uploads/untitled-design-1.svg?p=k5r3yjes");
-  background-size: cover;
-}
-
 .progress-bar-container {
   position: fixed;
   background: #000;

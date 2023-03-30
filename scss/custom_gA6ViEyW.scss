@@ -187,3 +187,51 @@ carousel {  0%, 17.5% {
     }
   }
 }
+
+/* Slide 104 (#3) */
+
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-104-abff5e27"] */
+.slide[data-cid="slide-104-abff5e27"]{
+  .slider-104{
+    img{
+      width:300px;
+      border:0px solid transparent;
+      transition: .5s;
+    }
+    .slick-slide{
+      &.slick-current{
+        img{
+          border: 10px solid $blue;
+          opacity:1 !important;
+        }
+      }
+    }
+  }
+  .slider-104-arrow{
+    @include media($phablet, max) {
+      .slick-prev{
+        margin-right: 0!important;
+        float: right;
+      }
+      .slick-next{
+        float: none;
+      }
+    }
+    &:hover{
+      svg{
+        opacity:0.6;
+      }
+    }
+    svg{
+      transition: .15s;
+    }
+  }
+  .slider-104-controller{
+    @include media($phablet, max) {
+      order:1;
+    }
+  }
+  .social-104:hover{
+    opacity: 1 !important;
+  }
+}
