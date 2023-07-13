@@ -1,0 +1,92 @@
+/* 
+Compile this file to css/custom_AELknWp4.css using any SCSS preprocessor. 
+More information here: https://slides.gitbook.io/manual/scss
+*/
+
+@import "mixins.scss"; 
+@import "variables.scss";
+@import "variables-custom.scss";
+
+/* FINAL SPONSORS PAGE (#1) */
+.slide[data-cid="slide-63-7a0cfba4"]{
+  .flex-68 a {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    transition: opacity 0.1s ease-in, transform 0.15s cubic-bezier(0.5, 0, 0.25, 2.5);
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+  &.whiteSlide .tintLogos {
+    filter: brightness(0.2);
+  }
+  &:not(.whiteSlide) .tintLogos {
+    filter: brightness(1.3);
+  }
+}
+
+/* board info (#2) */
+
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-63-1a5312e8"] */
+.slide[data-cid="slide-63-1a5312e8"]{
+  .slider-104{
+    img{
+      width:300px;
+      border:0px solid transparent;
+      transition: .5s;
+    }
+    .slick-slide{
+      &.slick-current{
+        img{
+          border: 7px solid #405062;
+          opacity:10 !important;
+        }
+      }
+    }
+  }
+  .slider-104-arrow{
+    @include media($phablet, max) {
+      .slick-prev{
+        margin-right: 0!important;
+        float: right;
+      }
+      .slick-next{
+        float: none;
+      }
+    }
+    &:hover{
+      svg{
+        opacity:0.6;
+      }
+    }
+    svg{
+      transition: .15s;
+    }
+  }
+  .slider-104-controller{
+    @include media($phablet, max) {
+      order:1;
+    }
+  }
+  .social-104:hover{
+    opacity: 1 !important;
+  }
+}
+
+/* Example Parallax (#3) */
+/* smooth gradient fade to the next slide */
+  .smoothTint {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, rgba(0,0,0,.6)), to(#030609));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,.6) 80%, #030609);
+    background: -o-linear-gradient(top, rgba(0,0,0,.6) 80%, #030609);
+    background: linear-gradient(to bottom, rgba(0,0,0,.6) 80%, #030609);
+  }
+.parallax .background.parallax-element {
+    -webkit-transition: 0s !important;
+    -o-transition: 0s !important;
+    -moz-transition: 0s !important;
+    transition: 0s !important;
+}

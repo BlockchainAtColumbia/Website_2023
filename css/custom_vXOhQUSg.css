@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* First Page (#1) */
+/* smooth gradient fade to the next slide */
+.smoothTint {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, rgba(0, 0, 0, 0.6)), to(#030609));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 80%, #030609);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 80%, #030609);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 80%, #030609);
+}
+
+.parallax .background.parallax-element {
+  -webkit-transition: 0s !important;
+  -o-transition: 0s !important;
+  -moz-transition: 0s !important;
+  transition: 0s !important;
+}
+
+.progress-bar-container {
+  position: fixed;
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+}
+
+.progress-bar-container.loaded {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.progress-bar-wrap {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 3px;
+  width: 200px;
+  background: #222;
+}
+
+.progress-bar-wrap,
+.progress-bar {
+  position: absolute;
+  height: 3px;
+}
+
+/* ignore below */
+.progress-bar.blue {
+  display: none !important;
+}
+
+/* ignore above */
+/* Getting Started  (#2) */
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-65-6c3ed531"] */
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.slide[data-cid=slide-65-6c3ed531] .flex.flex-65 > li {
+  position: relative;
+  padding-left: 60px;
+  padding-bottom: 30px;
+}
+.slide[data-cid=slide-65-6c3ed531] .flex-65 .material-icons {
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 36px;
+}
+@media (max-width: 767px) {
+  .slide[data-cid=slide-65-6c3ed531] .flex.flex-65 > li {
+    padding-left: 65px;
+  }
+  .slide[data-cid=slide-65-6c3ed531] .flex-65 .material-icons {
+    left: 0px;
+  }
+}
+
+.textLedger {
+  color: #7aa6de;
+}
+
+.textDiscord {
+  color: #7aa6de;
+}
+
+.textTelegram {
+  color: #7aa6de;
+}
+
+.textGcal {
+  color: #7aa6de;
+}
+
+/* What We Do (#3) */
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-105-ad5643ef"] */
+.slide[data-cid=slide-105-ad5643ef] .box-105 {
+  max-width: 480px;
+  min-height: 580px;
+}
+@media (max-width: 569px) {
+  .slide[data-cid=slide-105-ad5643ef] .box-105 {
+    max-width: 320px;
+    min-height: 440px;
+  }
+}
+.slide[data-cid=slide-105-ad5643ef] .thumbnail-105:hover .poster-105 {
+  opacity: 1 !important;
+}
+.slide[data-cid=slide-105-ad5643ef] .thumbnail-105 a:hover {
+  opacity: 1 !important;
+}
+.slide[data-cid=slide-105-ad5643ef] .poster-105 {
+  transition: 0.15s;
+}
+.slide[data-cid=slide-105-ad5643ef] .number-105 {
+  top: 40px;
+  left: 40px;
+  color: #405062;
+}
+.slide[data-cid=slide-105-ad5643ef] .inner-105 {
+  right: 40px;
+  bottom: 60px;
+  left: 40px;
+  color: #405062;
+}
+
+/* Last Slide Final (#4) */
+.slide[data-cid=example-ilRMwaAD-83463bda] .flex-68 a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  transition: opacity 0.1s ease-in, transform 0.15s cubic-bezier(0.5, 0, 0.25, 2.5);
+}
+.slide[data-cid=example-ilRMwaAD-83463bda] .flex-68 a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.slide[data-cid=example-ilRMwaAD-83463bda].whiteSlide .tintLogos {
+  filter: brightness(0.2);
+}
+.slide[data-cid=example-ilRMwaAD-83463bda]:not(.whiteSlide) .tintLogos {
+  filter: brightness(1.3);
+}

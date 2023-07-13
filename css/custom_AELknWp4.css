@@ -1,0 +1,69 @@
+/* FINAL SPONSORS PAGE (#1) */
+.slide[data-cid=slide-63-7a0cfba4] .flex-68 a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  transition: opacity 0.1s ease-in, transform 0.15s cubic-bezier(0.5, 0, 0.25, 2.5);
+}
+.slide[data-cid=slide-63-7a0cfba4] .flex-68 a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.slide[data-cid=slide-63-7a0cfba4].whiteSlide .tintLogos {
+  filter: brightness(0.2);
+}
+.slide[data-cid=slide-63-7a0cfba4]:not(.whiteSlide) .tintLogos {
+  filter: brightness(1.3);
+}
+
+/* board info (#2) */
+/* To restrict styles to the current slide, panel, or example use .slide[data-cid="slide-63-1a5312e8"] */
+.slide[data-cid=slide-63-1a5312e8] .slider-104 img {
+  width: 300px;
+  border: 0px solid transparent;
+  transition: 0.5s;
+}
+.slide[data-cid=slide-63-1a5312e8] .slider-104 .slick-slide.slick-current img {
+  border: 7px solid #405062;
+  opacity: 10 !important;
+}
+@media (max-width: 767px) {
+  .slide[data-cid=slide-63-1a5312e8] .slider-104-arrow .slick-prev {
+    margin-right: 0 !important;
+    float: right;
+  }
+  .slide[data-cid=slide-63-1a5312e8] .slider-104-arrow .slick-next {
+    float: none;
+  }
+}
+.slide[data-cid=slide-63-1a5312e8] .slider-104-arrow:hover svg {
+  opacity: 0.6;
+}
+.slide[data-cid=slide-63-1a5312e8] .slider-104-arrow svg {
+  transition: 0.15s;
+}
+@media (max-width: 767px) {
+  .slide[data-cid=slide-63-1a5312e8] .slider-104-controller {
+    order: 1;
+  }
+}
+.slide[data-cid=slide-63-1a5312e8] .social-104:hover {
+  opacity: 1 !important;
+}
+
+/* Example Parallax (#3) */
+/* smooth gradient fade to the next slide */
+.smoothTint {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, rgba(0, 0, 0, 0.6)), to(#030609));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 80%, #030609);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 80%, #030609);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 80%, #030609);
+}
+
+.parallax .background.parallax-element {
+  -webkit-transition: 0s !important;
+  -o-transition: 0s !important;
+  -moz-transition: 0s !important;
+  transition: 0s !important;
+}
