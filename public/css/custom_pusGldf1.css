@@ -1,0 +1,46 @@
+/* General features (#1) */
+.app-2-hover:hover {
+  color: #2196F3 !important;
+}
+
+.app-2-hover:hover svg {
+  fill: #2196F3 !important;
+}
+
+.app-2-hover, .app-2-hover svg {
+  transition: all 0.2s;
+}
+
+/* Slide 30 (#2) */
+li {
+  margin-bottom: 2;
+}
+
+.list.decimal li {
+  list-style-type: decimal;
+}
+
+.list.disc li {
+  list-style-type: disc;
+}
+
+.list.alph li {
+  list-style-type: lower-latin;
+}
+
+/* Slide 30 (#3) */
+li {
+  margin-bottom: 1;
+}
+
+.list.decimal li {
+  list-style-type: decimal;
+}
+
+.list.disc li {
+  list-style-type: disc;
+}
+
+.list.alph li {
+  list-style-type: lower-latin;
+}
